@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+  <html>
+      <head>
+        <base target="_top">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+          <base target="_top">
+          <script>
+          function LoadFile(event)
+          {
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      console.log(e.target.result);
+      var fileData = e.target.result.substr(e.target.result.indexOf(",")+1);
+      var mimeTypeStart = e.target.result.indexOf("data:") + 5;
+      var mimeTypeEnd = e.target.result.indexOf(";");
+      var mimeType = e.target.result.substr(mimeTypeStart, mimeTypeEnd - mimeTypeStart);
+      var fileName = file.name;
+      document.getElementById("fileData").value = fileData;
+      document.getElementById("mimeType").value = mimeType;
+      document.getElementById("fileName").value = fileName;
+      };    
+    reader.readAsDataURL(file);
+      }
+      </script>
+      </head>
+      <body class="bg-light">
+      <h4>
+      <marquee direction="left" scrollamount="8" onmouseover="this.stop()" onmouseout="this.start()">
+        ***Rajuk Uttara Model College***    </marquee>
+              </h4>
+              <div class="container">
+	  <div class="row">
+	  <div class="col-lg-6 col-md-8 mx-auto border bg-white p-4 rounded">
+     	<p class="h3 mb-4 text-center">Online Admission Form</p>
+
+    <?var url = getUrl();?>
+    <form method="post" action="<?= url ?>" >
+     
+       
+	      <div class="form-row">
+                        <div class="form-group col-md-6">
+                        <label for="applicants_name">Applicant's Name</label>
+                        <input type="text" class="form-control" id="applicants_name" name="applicants_name" placeholder="In English" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                        <label for="fathers_name">Father's Name</label>
+                        <input type="text" class="form-control" id="fathers_name" name="fathers_name" placeholder="In English" required>
+                        </div>
+                        </div>
+
+	     <div class="form-row">
+                        <div class="form-group col-md-6">
+                        <label for="mothers_name">Mother's Name</label>
+                        <input type="text" class="form-control" id="mothers_name" name="mothers_name" placeholder="In English" required>
+                        </div>
+	     <div class="form-group col-md-6">
+                        <p>Gender</p>
+                        <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                        <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                        <label class="form-check-label" for="female">Female</label> 
+	                      </div>
+                        <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="others" value="others">
+                        <label class="form-check-label" for="others">Others</label>
+                        </div>
+                        </div> </div>
+
+	     <div class="form-row">
+	     <div class="form-group col-md-6">
+                        <label for="dateofbirth">Date of Birth</label>
+                        <input type="date" class="form-control" id="dateofbirth" name="dateofbirth" required>
+                        </div>
+	     <div class="form-group col-md-6">
+                        <label for="religion">Religion</label>
+                        <select class="custom-select d-block w-100" id="religion" name="religion" required>
+                        <option selected="" disabled="" value="">Select</option> 
+                        <option>Islam</option>
+                        <option>Hinduism</option>
+                        <option>Christianity</option>
+                        <option>Buddhism</option>
+                        <option>Others</option>
+                        </select>
+                        </div> </div> 
+
+	      <div class="form-row">
+	      <div class="form-group col-md-6">
+                        <label for="mobile_no">Mobile No</label>
+                        <input type="text" class="form-control" id="mobile_no" name="mobile_no"maxlength="14" pattern="^(?:\+?88)?01[15-9]\d{8}$" required="">
+                        </div>
+                        
+	      <div class="form-group col-md-6">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Village/Town,  Police Station" required>
+                        </div>
+                        </div>
+
+	       <div class="form-row">
+                        <div class="form-group col-md-6">
+                        <label for="district">District</label>
+                        <select class="custom-select d-block w-100" id="district" name="district" required>
+                        <option selected="" disabled="" value="">Select</option>
+	       <option >Bagerhat</option><option >Bandarban</option><option >Barguna</option><option >Barishal</option><option >Bhola</option><option >Bogura</option><option >Brahmanbaria</option><option >Chandpur</option><option 		>Chapai Nawabganj</option><option >Chattogram</option><option >Chuadanga</option><option >Cox`s Bazar</option><option >Cumilla</option><option >Dhaka</option><option >Dinajpur</option><option 		>Faridpur</option><option >Feni</option><option >Gaibanda</option><option >Gazipur</option><option >Gopalganj</option><option >Habiganj</option><option >Jaipurhat</option><option >Jamalpur</option><option 		>Jashore</option><option >Jhalokhathi</option><option >Jhenaidah</option><option >Khagrachhari</option><option >Khulna</option><option >Kishorganj</option><option >Kurigram</option><option >Kushtia</option><option 		>Lalmonirhat</option><option >Luxmipur</option><option >Madaripur</option><option >Magura</option><option >Manikganj</option><option >Meharpur</option><option >Mouluvibazar</option><option >Munshiganj</option><option 		>Mymensingh</option><option >Naogaon</option><option >Narail</option><option >Narayanganj</option><option >Narsingdi</option><option >Natore</option><option >Netrokona</option><option >Nilphamari</option><option 		>Noakhali</option><option >Pabna</option><option >Panchagarh</option><option >Patuakhali</option><option >Pirojpur</option><option >Rajbari</option><option >Rajshahi</option><option >Rangamati</option><option 		>Rangpur</option><option >Satkhira</option><option >Shariatpur</option><option >Sherpur</option><option >Sirajganj</option><option >Sunamganj</option><option >Sylhet</option><option >Tangail</option><option 		>Thakurgaon</option>
+
+                        </select>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                        <label for="course">Course</label>
+                        <select class="custom-select d-block w-100" id="course" name="course" required>
+                        <option selected="" disabled="" value="">Select</option>
+                        <option>Class_6</option>
+                        <option>Class_7</option>
+                        <option>Class_8</option>
+                        <option>Class_9__Science</option>
+                        <option>Class_9__Business Studies</option>
+                        <option>Class_9__Humanities</option>
+                        </select>
+                        </div>
+                        </div>
+
+      	                <tr>
+      	                <td>Photo :</td>
+      	                <td><input type="file" name="file" onchange="LoadFile(event)" />
+      	                <input type="hidden" id="fileData" name="fileData" />
+     	                  <input type="hidden" id="mimeType" name="mimeType" />
+      	                <input type="hidden" id="fileName" name="fileName" /></td>
+      	                </tr>
+     	                  <tr> 
+     	                  <td colspan="2"><input type="submit" class="btn btn-primary " value="Submit the File" /></td>
+     	                  <tr>
+       	                <td colspan="2"><span><?= message ?></span></td>     
+    	                  </form>
+ 	                  </body>
+	            </html>
